@@ -2,9 +2,10 @@ class Pet:
     def __init__(self, name, type, tricks):
         self.name = name
         self.type = type
-        self.tricks = tricks
+        self.tricks = []
         self.health = 100
         self.energy = 100
+        self.tricks = tricks
 
     def sleep(self):
         if self.energy >= 75:
@@ -42,10 +43,15 @@ class Pet:
             self.energy -= 10
             self.health -= 5
             print(f"{self.name} loves you!")
+
     def noise(self):
         if self.type == "Dog":
             print("Woof")
         elif self.type == "Cat":
             print("Meow")
         elif self.type != "Cat" or "Dog":
-            print("Get a better pet")
+            print("Get a better pet. ps I just didn't want to add 500 animal sounds...")
+
+    def doTrick(self, treat, tricks):
+        print(f"{self.name}, can you {tricks}?")
+        print(f"Good job! {self.name} gets a {treat}.")
